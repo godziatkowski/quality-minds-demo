@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "0a651935-e0a9-41a7-9265-0771ffcd714c",
+		"name": "Demo App",
+		"description": "Sample Api usage of Demo app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create currency",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"euro\",\r\n    \"isoCode\": \"EUR\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/currencies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Client",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Zuzia\",\r\n    \"lastName\": \"Arbuzia\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/clients",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": \"fbfff5c1-d656-4f5f-89cc-ddd6c3c70ecf\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase account balance",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"accountId\": \"ccfabca8-15ce-452e-8bd1-be71619acd2f\",\r\n    \"amount\": 500\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/accounts/credit",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrease account balance",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"accountId\": \"ccfabca8-15ce-452e-8bd1-be71619acd2f\",\r\n    \"amount\": 500\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/accounts/debit",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"debit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get account balance ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/accounts/ccfabca8-15ce-452e-8bd1-be71619acd2f/balance?currency=EUR",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"ccfabca8-15ce-452e-8bd1-be71619acd2f",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "EUR"
+						}
+					]
+				},
+				"description": "When executed without query param, balance will be returned in PLN, otherwise application will use NBP api to calculate account balance in given currency "
+			},
+			"response": []
+		}
+	]
+}
