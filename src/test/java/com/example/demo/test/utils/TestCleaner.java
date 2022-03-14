@@ -1,5 +1,6 @@
 package com.example.demo.test.utils;
 
+import com.example.demo.domain.account.AccountTestCleaner;
 import com.example.demo.domain.client.ClientTestCleaner;
 import com.example.demo.domain.currency.CurrencyTestCleaner;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,10 @@ public class TestCleaner {
 
     private final ClientTestCleaner clientTestCleaner;
 
+    private final AccountTestCleaner accountTestCleaner;
+
     public void cleanDatabase() {
+        accountTestCleaner.cleanAccountTable();
         clientTestCleaner.cleanClientTable();
         currencyTestCleaner.cleanCurrencyTable();
     }
