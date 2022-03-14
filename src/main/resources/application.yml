@@ -1,0 +1,4 @@
+nbp:
+  url: "http://api.nbp.pl"
+  exchangeRateToday: "/api/exchangerates/rates/A/%s/today/"
+  exchangeRateLast: "/api/exchangerates/rates/A/%s/last/%d"

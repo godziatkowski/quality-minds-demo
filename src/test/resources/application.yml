@@ -1,0 +1,4 @@
+nbp:
+  url: "test.nbp.api.client.pl"
+  exchangeRateToday: "/api/exchangerates/rates/A/%s/today/"
+  exchangeRateLast: "/api/exchangerates/rates/A/%s/last/%d"
