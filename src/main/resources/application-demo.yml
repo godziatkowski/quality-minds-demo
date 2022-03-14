@@ -1,0 +1,8 @@
+demo:
+  clientId: "fbfff5c1-d656-4f5f-89cc-ddd6c3c70ecf"
+  clientFirstName: "demo"
+  clientLastName: "client"
+  accountId: "ccfabca8-15ce-452e-8bd1-be71619acd2f"
+  accountBalance: "500"
+  currencyName: "euro"
+  currencyIsoCode: "EUR"
